@@ -103,8 +103,44 @@ describe('multiply', () => {
 });
 
 describe('divide', () => {
+  test('Can divide two small positive numbers',()=>{
+    actual = divide(12,4);
+    expected = 3;
+    expect(actual).toBe(expected);
+  });
+
+  test('Can divide two large positive numbers',()=>{
+    actual = divide(1200,400);
+    expected = 3;
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide two negative numbers',() =>{
+    actual = divide(-600, -300);
+    expected =2;
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide one negative numbers',() =>{
+    actual = divide(-600, 300);
+    expected = -2;
+    expect(actual).toBe(expected);
+  });
+
+  // test('can divide zero', () => {
+  //   expected = Infinity;
+  //   actual = divide(20, 0);
+  //   expect(actual).toBe(expected);
+  // });
+
+  test('can divide zero', function() {
+    expected = Error;
+    actual = divide(20, 0);
+    expect(function(){parser.parse(raw);}).toThrow(new Error("parser is not defined"));
+  });
 
 });
+
 
 describe('modulus', () => {
 
