@@ -64,11 +64,41 @@ describe('subtract', () => {
     
   });
  
-
-
 });
 
 describe('multiply', () => {
+
+  test('can multiply two small positive numbers',() =>{
+    actual = multiply(2,3);
+    expected =6;
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply two large positive numbers',() =>{
+    actual = multiply(200, 300);
+    expected =60000;
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply two negative numbers',() =>{
+    actual = multiply(-200, -300);
+    expected =60000;
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply one negative numbers',() =>{
+    actual = multiply(-200, 300);
+    expected = -60000;
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply zero', () => {
+    expected = 0;
+    actual = multiply(0, 20);
+    expect(actual).toBe(expected);
+    
+  });
+
 
 });
 
